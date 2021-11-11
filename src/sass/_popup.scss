@@ -1,0 +1,86 @@
+.popup {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100rem;
+  height: 70rem;
+  background-color: $color-text-white;
+  border-radius: 2rem;
+  z-index: 10000;
+
+  &__box {
+    height: 50%;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    & label {
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: $color-text-black;
+    }
+
+    & input {
+      font-size: 1.7rem;
+      padding: 1rem 1.5rem;
+      border: 1px solid $color-text-dark;
+      border-radius: 0.5rem;
+      &:focus {
+        outline: 1px solid $color-accent;
+      }
+    }
+
+    & button {
+      grid-column: 1 / span 2;
+      justify-self: center;
+      margin-top: 1rem;
+    }
+  }
+  &__laptop {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    &--img {
+      height: 15rem;
+    }
+
+    &--name {
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: $color-text-black;
+    }
+
+    &--price {
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: $color-text-black;
+    }
+  }
+  &__btn {
+    color: $color-text-dark;
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-text-black, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 9000;
+  transition: all 0.5s;
+}

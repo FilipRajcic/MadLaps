@@ -1,0 +1,161 @@
+.header {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-dark, 0.8),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  &--nav--box {
+    width: 100%;
+    background-color: rgba($color-primary-light, 0.2);
+    margin-top: 2.5rem;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+  }
+
+  &__box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 30%;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+  }
+
+  &__text {
+    font-size: 6rem;
+    font-weight: 400;
+    color: $color-text-grey;
+
+    & span {
+      color: $color-accent;
+    }
+  }
+  &__buttons {
+    align-self: flex-start;
+  }
+}
+
+.nav {
+  display: flex;
+  width: 80%;
+  height: 10rem;
+
+  &__logo {
+    align-self: center;
+    height: 6rem;
+    padding: 0;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    list-style: none;
+    flex-grow: 1;
+  }
+  &__item {
+    margin: 1rem;
+  }
+  &__item:nth-of-type(1) {
+    margin-left: auto;
+  }
+  &__item:last-child {
+    background-color: $color-accent;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 1.8rem;
+      font-weight: 400;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-bottom: 0.2rem solid transparent;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.4s;
+    }
+    &--normal {
+      color: $color-text-grey;
+
+      &:hover {
+        background-color: $color-primary-dark;
+        color: $color-accent;
+      }
+      &:active {
+        transform: translateY(0.2rem);
+      }
+    }
+    &--accent {
+      color: $color-text-dark;
+      &:hover {
+        background-color: $color-primary-dark;
+        color: $color-text-white;
+      }
+      &:active {
+        transform: translateY(0.2rem);
+      }
+    }
+  }
+}
+///////////////////////////////////////////////
+//// STICKY NAVIGATION CHANGES
+.header--nav--box.sticky {
+  z-index: 10000;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  background-color: rgba($color-text-black, 0.7);
+  margin-top: 0px;
+  margin-left: 0;
+  border-bottom: 1px solid rgba($color-text-grey, 0.5);
+
+  .nav {
+    height: 7rem;
+    &__logo {
+      height: 4rem;
+    }
+    &__item:last-child {
+      background-color: transparent;
+    }
+    &__link {
+      &:link,
+      &:visited {
+        display: inline-block;
+        font-size: 1.8rem;
+        font-weight: 400;
+        padding: 2rem 2rem;
+        border-bottom: 0.2rem solid transparent;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 0.4s;
+      }
+      &--normal,
+      &--accent {
+        color: $color-text-grey;
+        &:hover,
+        &:active {
+          background-color: transparent;
+          color: $color-text-white;
+          border-bottom: 0.2rem solid $color-accent;
+        }
+      }
+    }
+  }
+}

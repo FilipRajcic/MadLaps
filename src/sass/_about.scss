@@ -1,0 +1,22 @@
+.about {
+  height: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: $color-primary;
+  color: $color-text-black;
+
+  &__heading {
+    color: $color-text-white;
+  }
+
+  &__paragraph {
+    margin-right: 2rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    width: 60%;
+    color: $color-text-white;
+    text-align: center;
+  }
+}
