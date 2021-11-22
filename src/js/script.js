@@ -202,7 +202,34 @@ slider();
 
 ////////////////////////////////////////////\
 ///////////////// SHOP NOW
+const overlay = document.querySelector(".overlay");
+const modal = document.querySelector(".modal");
 const PopupSection = document.querySelector(".popup");
+const cardBtn = document.querySelectorAll(".card__button");
+const popupBtnClose = document.querySelector(".btn--close-modal");
+let PopupBox = document.querySelector(".popup__box");
+
+const openModal = function (b) {
+  b.preventDefault();
+  // popupBtnClose.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  modal.classList.remove("hidden");
+};
+const closeModal = function () {
+  // popupBtnClose.classList.add("hidden");
+  overlay.classList.add("hidden");
+  modal.classList.add("hidden");
+};
+
+popupBtnClose.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+document.addEventListener("keydown", function (e) {
+  console.log(e.key);
+  if (e.key === "Escape" && !PopupSection.classList.contains("hidden")) {
+    closeModal();
+  }
+});
+cardBtn.forEach((btn) => btn.addEventListener("click", openModal));
 document.querySelectorAll(".card__button").forEach((btn) => {
   btn.addEventListener("click", function (b) {
     const btnTarget = b.target.closest(".card");
@@ -216,12 +243,41 @@ document.querySelectorAll(".card__button").forEach((btn) => {
     console.log(laptopNameOne);
     console.log(laptopNameTwo);
     console.log(laptopPrice);
-
+    PopupSection.textContent = "";
     const markup = `
-      <img src="${laptopImg}" alt="laptop-image" class="popup__laptop--img">
-      <div class="popup__laptop--name">${laptopNameOne} ${laptopNameTwo}</div>   
-      <div class="popup__laptop--price">${laptopPrice}</div>   
+      <div class="popup__box"> 
+        <div class="popup__laptop">
+          <img src="${laptopImg}" alt="laptop-image" class="popup__laptop--img">
+          <div class="popup__laptop--name">${laptopNameOne} ${laptopNameTwo}</div>   
+          <div class="popup__laptop--price">${laptopPrice}</div>     
+        </div>
+        <form class="popup__form">
+          <label>First Name</label>
+          <input type="text" />
+          <label>Last Name</label>
+          <input type="text" />
+          <label>Email Address</label>
+          <input type="email" />
+        </form>
+        
+        <form class="popup__form">
+          <label>Address</label>
+          <input type="text"/>
+          <label>Payment Methods</label>
+          <select name="payment" id="payment">
+            <option value="PayPal" selected>PayPal</option>
+            <option value="MasterCard">MasterCard</option>
+            <option value="Visa">Visa</option>
+            <option value="American Express">American Express</option>
+            <option value="Discover">Discover</option>
+            <option value="JCB">JCB</option>
+          </select>
+          <label>Card Number</label>
+          <input type="text"/>
+        </form>
+      </div> 
+      <a href="#" class="popup__btn btn btn--green"><span>Order now</span></a>
     `;
-    PopupSection.insertAdjacentHTML("afterbegin", markup);
+    PopupSection.insertAdjacentHTML("beforeend", markup);
   });
 });
