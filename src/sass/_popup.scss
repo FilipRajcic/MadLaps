@@ -5,7 +5,9 @@
   transform: translate(-50%, -50%);
   width: 100rem;
   height: 70rem;
-  z-index: 10000;
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
 }
 .popup {
   display: flex;
@@ -86,7 +88,8 @@
     }
   }
   &__btn {
-    color: $color-text-dark;
+    align-self: center;
+    margin-top: -12rem;
   }
 }
 .overlay {
@@ -97,11 +100,11 @@
   height: 100%;
   background-color: rgba($color-text-black, 0.5);
   backdrop-filter: blur(4px);
-  z-index: 9000;
+  z-index: 100;
   transition: all 0.5s;
 }
 .btn--close-modal {
-  z-index: 12000;
+  z-index: 120;
   font-size: 3rem;
   position: absolute;
   top: 2rem;

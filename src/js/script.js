@@ -17,7 +17,7 @@ const arrow = document.querySelector(".arrow");
 const navHeight = nav.getBoundingClientRect().height - 30; // -30 for new smaller nav
 
 const stickyNav = function (entries) {
-  console.log(navHeight);
+  // console.log(navHeight);
   const [entry] = entries;
   if (!entry.isIntersecting) {
     navBox.classList.add("sticky");
@@ -204,7 +204,7 @@ slider();
 ///////////////// SHOP NOW
 const overlay = document.querySelector(".overlay");
 const modal = document.querySelector(".modal");
-const PopupSection = document.querySelector(".popup");
+const popupSection = document.querySelector(".popup");
 const cardBtn = document.querySelectorAll(".card__button");
 const popupBtnClose = document.querySelector(".btn--close-modal");
 let PopupBox = document.querySelector(".popup__box");
@@ -224,8 +224,8 @@ const closeModal = function () {
 popupBtnClose.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
 document.addEventListener("keydown", function (e) {
-  console.log(e.key);
-  if (e.key === "Escape" && !PopupSection.classList.contains("hidden")) {
+  // console.log(e.key);
+  if (e.key === "Escape" && !popupSection.classList.contains("hidden")) {
     closeModal();
   }
 });
@@ -238,12 +238,12 @@ document.querySelectorAll(".card__button").forEach((btn) => {
     const laptopNameOne = btnTarget.children[1].childNodes[0].data;
     const laptopNameTwo = btnTarget.children[1].childNodes[2].data;
     const laptopPrice = btnTarget.children[2].childNodes[0].data;
-    console.log(btnTarget);
-    console.log(laptopImg);
-    console.log(laptopNameOne);
-    console.log(laptopNameTwo);
-    console.log(laptopPrice);
-    PopupSection.textContent = "";
+    // console.log(btnTarget);
+    // console.log(laptopImg);
+    // console.log(laptopNameOne);
+    // console.log(laptopNameTwo);
+    // console.log(laptopPrice);
+    popupSection.textContent = "";
     const markup = `
       <div class="popup__box"> 
         <div class="popup__laptop">
@@ -276,8 +276,23 @@ document.querySelectorAll(".card__button").forEach((btn) => {
           <input type="text"/>
         </form>
       </div> 
-      <a href="#" class="popup__btn btn btn--green"><span>Order now</span></a>
     `;
-    PopupSection.insertAdjacentHTML("beforeend", markup);
+    popupSection.insertAdjacentHTML("beforeend", markup);
   });
+});
+
+////////////////////////////////////////////\
+///////////////// PURCHASE BOX
+
+const purchaseSection = document.querySelector(".purchase");
+const orderBtn = document.querySelector(".popup__btn");
+orderBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log("click");
+
+  purchaseSection.classList.remove("hidden");
+  setTimeout(function () {
+    purchaseSection.classList.add("hidden");
+    closeModal();
+  }, 2000);
 });
