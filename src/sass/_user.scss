@@ -57,6 +57,12 @@
   width: 5.5rem;
   font-size: 3.25rem;
   cursor: pointer;
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $color-primary-dark;
+  }
 }
 
 .slider__btn--left {
