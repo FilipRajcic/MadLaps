@@ -10,6 +10,9 @@
   &__heading {
     color: $color-text-white;
   }
+  @media only screen and(max-width: $bp-smallest) {
+    height: 38rem;
+  }
 
   &__paragraph {
     margin-right: 2rem;
@@ -18,5 +21,11 @@
     width: 60%;
     color: $color-text-white;
     text-align: center;
+    @media only screen and(max-width: $bp-large) {
+      width: 80%;
+    }
+    @media only screen and(max-width: $bp-medium) {
+      font-size: 2rem;
+    }
   }
 }

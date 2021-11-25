@@ -5,6 +5,17 @@
   justify-content: space-evenly;
   align-items: center;
   background-color: $color-text-black;
+
+  @media only screen and(max-width: $bp-large) {
+    height: 60rem;
+  }
+  @media only screen and(max-width: $bp-medium) {
+    height: 50rem;
+  }
+  @media only screen and(max-width: $bp-small) {
+    height: 70rem;
+  }
+
   &__heading {
     color: $color-text-grey;
   }
@@ -13,6 +24,13 @@
     justify-content: space-between;
     align-items: center;
     list-style: none;
+    @media only screen and(max-width: $bp-small) {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 5rem;
+      // flex-direction: column;
+    }
   }
   &__item {
     box-shadow: 0 0 0rem 0.6rem $color-text-black,
@@ -26,8 +44,23 @@
     justify-content: center;
     align-items: center;
     transition: all 0.2s;
+    @media only screen and(max-width: $bp-large) {
+      height: 25rem;
+      width: 25rem;
+    }
+    @media only screen and(max-width: $bp-medium) {
+      height: 16rem;
+      width: 16rem;
+    }
+    @media only screen and(max-width: $bp-small) {
+      height: 18rem;
+      width: 18rem;
+    }
     &:not(:last-child) {
       margin-right: 5rem;
+      @media only screen and(max-width: $bp-small) {
+        margin-right: 0;
+      }
     }
 
     &:hover > img {
@@ -64,5 +97,14 @@
   &__img {
     transition: all 0.2s;
     height: 20rem;
+    @media only screen and(max-width: $bp-large) {
+      height: 15rem;
+    }
+    @media only screen and(max-width: $bp-medium) {
+      height: 12rem;
+    }
+    @media only screen and(max-width: $bp-medium) {
+      height: 15rem;
+    }
   }
 }

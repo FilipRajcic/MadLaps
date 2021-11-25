@@ -14,22 +14,45 @@
     <title>Madlaps</title>
   </head>
   <body>
+    <nav class="nav__phone">
+      <div class="nav__phone__background hidden"></div>
+      <img src="src/img/logo-1.png" alt="Logo" class="nav__phone__logo" />
+      <div class="nav__phone__menu">
+        <svg class="nav__phone__menu__icon">
+          <use xlink:href="src/img/sprite.svg#icon-menu" class="navigation__icon"></use>
+        </svg>
+      </div>
+      <ul class="nav__phone__list hidden">
+        <li class="nav__phone__item">
+          <a href="#about" class="nav__phone__link navigation__phone--scroll">About us</a>
+        </li>
+        <li class="nav__phone__item">
+          <a href="#products" class="nav__phone__link navigation__phone--scroll">Products</a>
+        </li>
+        <li class="nav__phone__item">
+          <a href="#user" class="nav__phone__link navigation__phone--scroll">Customers</a>
+        </li>
+        <li class="nav__phone__item">
+          <a href="#shop" class="nav__phone__link navigation__phone--scroll">Shop now</a>
+        </li>
+      </ul>
+    </nav>
     <header class="header" id="header">
-      <div class="header--nav--box">
+      <div class="header--nav--box box__bck">
         <nav class="nav">
           <img src="src/img/logo-1.png" alt="Logo" class="nav__logo" />
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#about" class="nav__link nav__link--normal">About us</a>
+              <a href="#about" class="nav__link navigation--scroll nav__link--normal">About us</a>
             </li>
             <li class="nav__item">
-              <a href="#products" class="nav__link nav__link--normal">Products</a>
+              <a href="#products" class="nav__link navigation--scroll nav__link--normal">Products</a>
             </li>
             <li class="nav__item">
-              <a href="#user" class="nav__link nav__link--normal">Customers</a>
+              <a href="#user" class="nav__link navigation--scroll nav__link--normal">Customers</a>
             </li>
             <li class="nav__item">
-              <a href="#shop" class="nav__link nav__link--accent">Shop now</a>
+              <a href="#shop" class="nav__link navigation--scroll nav__link--accent">Shop now</a>
             </li>
           </ul>
         </nav>

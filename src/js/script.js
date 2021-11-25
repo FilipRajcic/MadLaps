@@ -35,6 +35,60 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 
 headerObserver.observe(header);
+//////////////////////////////////////////
+/// PAGE NAVIGATION PHONE
+const navPhoneBtn = document.querySelector(".nav__phone__menu");
+const navPhoneBtnIcon = document.querySelector(".navigation__icon");
+const navPhoneList = document.querySelector(".nav__phone__list");
+const navPhoneBackground = document.querySelector(".nav__phone__background");
+const navPhoneLink = document.querySelectorAll(".navigation__phone--scroll");
+const iconChange = function () {
+  const iconLinkMenu = navPhoneBtnIcon.getAttribute("xlink:href");
+  if (iconLinkMenu.includes("menu")) {
+    const iconLinkCross = iconLinkMenu.replace("menu", "cross");
+    navPhoneBtnIcon.setAttribute("xlink:href", iconLinkCross);
+  } else {
+    const iconLinkCross = iconLinkMenu.replace("cross", "menu");
+    navPhoneBtnIcon.setAttribute("xlink:href", iconLinkCross);
+  }
+};
+
+navPhoneBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  navPhoneList.classList.toggle("hidden");
+  navPhoneBackground.classList.toggle("hidden");
+  iconChange();
+});
+navPhoneBackground.addEventListener("click", function () {
+  navPhoneList.classList.add("hidden");
+  navPhoneBackground.classList.add("hidden");
+  iconChange();
+});
+
+navPhoneLink.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const id = e.target.getAttribute("href");
+    const element = document.querySelector(id);
+    element.scrollIntoView({ behavior: "smooth" });
+    navPhoneList.classList.add("hidden");
+    navPhoneBackground.classList.add("hidden");
+    iconChange();
+  });
+});
+document.addEventListener("keydown", function (e) {
+  // console.log(e.key);
+  if (
+    e.key === "Escape" &&
+    !navPhoneBackground.classList.contains("hidden") &&
+    !navPhoneList.classList.contains("hidden")
+  ) {
+    navPhoneList.classList.add("hidden");
+    navPhoneBackground.classList.add("hidden");
+    iconChange();
+  }
+});
 
 //////////////////////////////////////////
 /// PAGE NAVIGATION
@@ -49,7 +103,7 @@ headerObserver.observe(header);
 //   }
 // });
 
-const navLink = document.querySelectorAll(".nav__link");
+const navLink = document.querySelectorAll(".navigation--scroll");
 navLink.forEach(function (link) {
   link.addEventListener("click", function (e) {
     e.preventDefault();
@@ -62,6 +116,9 @@ navLink.forEach(function (link) {
     window.scrollTo({ top: y, behavior: "smooth" });
   });
 });
+
+//////////////////////////////////////////
+/// RESPONSIVE NAVIGATION
 
 //////////////////////////////////////////
 /// BUTTON NAVIGATION

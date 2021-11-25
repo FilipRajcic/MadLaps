@@ -22,6 +22,10 @@
     justify-content: center;
     align-items: center;
     transition: all 0.2s;
+    @media only screen and(max-width: $bp-small) {
+      visibility: hidden;
+      opacity: 0;
+    }
   }
 
   &__box {
@@ -34,6 +38,11 @@
     left: 30%;
     text-transform: uppercase;
     transform: translate(-50%, -50%);
+
+    @media only screen and(max-width: $bp-small) {
+      top: 50%;
+      left: 35%;
+    }
   }
 
   &__text {
@@ -41,6 +50,15 @@
     font-weight: 400;
     color: $color-text-grey;
 
+    @media only screen and(max-width: $bp-large) {
+      font-size: 6rem;
+    }
+    @media only screen and(max-width: $bp-medium) {
+      font-size: 4rem;
+    }
+    @media only screen and(max-width: $bp-small) {
+      font-size: 3.8rem;
+    }
     & span {
       color: $color-accent;
     }
@@ -53,12 +71,27 @@
 .nav {
   display: flex;
   width: 80%;
+  justify-content: center;
   height: 10rem;
+  @media only screen and(max-width: $bp-medium) {
+    width: 85%;
+  }
+  @media only screen and(max-width: $bp-small) {
+    visibility: hidden;
+    opacity: 0;
+  }
 
   &__logo {
     align-self: center;
     height: 6rem;
-    padding: 0;
+    @media only screen and(max-width: $bp-medium) {
+      height: 5rem;
+    }
+    @media only screen and(max-width: $bp-small) {
+      height: 3rem;
+      align-self: flex-start;
+      margin-top: 2rem;
+    }
   }
   &__list {
     display: flex;
@@ -67,12 +100,19 @@
     width: 30%;
     list-style: none;
     flex-grow: 1;
+    @media only screen and(max-width: $bp-small) {
+      width: 100%;
+      flex-direction: column;
+    }
   }
   &__item {
     margin: 1rem;
   }
   &__item:nth-of-type(1) {
     margin-left: auto;
+    @media only screen and(max-width: $bp-small) {
+      margin-left: 0;
+    }
   }
   &__item:last-child {
     background-color: $color-accent;
@@ -90,6 +130,10 @@
       text-decoration: none;
       text-transform: uppercase;
       transition: all 0.4s;
+      @media only screen and(max-width: $bp-medium) {
+        padding: 0.5rem 1.5rem;
+        font-size: 1.6rem;
+      }
     }
     &--normal {
       color: $color-text-grey;
@@ -130,6 +174,9 @@
     height: 7rem;
     &__logo {
       height: 4rem;
+      @media only screen and(max-width: $bp-medium) {
+        height: 3rem;
+      }
     }
     &__item:last-child {
       background-color: transparent;
@@ -145,6 +192,11 @@
         text-decoration: none;
         text-transform: uppercase;
         transition: all 0.4s;
+
+        @media only screen and(max-width: $bp-medium) {
+          font-size: 1.7rem;
+          padding: 1.5rem 1.5rem;
+        }
       }
       &--normal,
       &--accent {
