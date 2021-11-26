@@ -7,14 +7,22 @@
   align-items: center;
   background-color: $color-primary-dark;
   @media only screen and(max-width: $bp-smallest) {
-    height: 300rem;
+    height: 480rem;
   }
 
   &__heading {
     color: $color-text-white;
+    font-size: 4rem;
+    @media only screen and(max-width: $bp-phone) {
+      font-size: 3.5rem;
+    }
   }
   &__heading--2 {
     color: $color-text-white;
+    font-size: 3rem;
+    @media only screen and(max-width: $bp-phone) {
+      font-size: 3rem;
+    }
   }
 
   &__container {
@@ -54,11 +62,15 @@
   }
 
   @media only screen and(max-width: $bp-medium) {
-    height: 40rem;
-  }
-  @media only screen and(max-width: $bp-medium) {
     padding: 4rem 3rem 1.5rem 3rem;
     margin-bottom: 2rem;
+    height: 40rem;
+  }
+  @media only screen and(max-width: $bp-smallest) {
+    height: 65rem;
+    width: 40rem;
+    margin-top: 5rem;
+    padding: 7rem 4rem 2rem 4rem;
   }
 
   &:hover {
@@ -78,7 +90,8 @@
       height: 10rem;
     }
     @media only screen and(max-width: $bp-smallest) {
-      height: 15rem;
+      height: 20rem;
+      padding: auto;
     }
   }
   &__name {
@@ -89,7 +102,8 @@
     text-align: center;
     color: $color-text-white;
     @media only screen and(max-width: $bp-smallest) {
-      font-size: 2rem;
+      font-size: 3rem;
+      // font-weight: 400;
     }
   }
 
@@ -100,15 +114,24 @@
 
     color: $color-text-white;
     @media only screen and(max-width: $bp-smallest) {
-      font-size: 2rem;
+      font-size: 3rem;
+      // font-weight: 400;
     }
   }
   &__button {
     color: $color-primary;
+    @media only screen and(max-width: $bp-smallest) {
+      font-size: 3rem !important;
+      // font-weight: 400 !important;
+    }
   }
   &__more {
     color: $color-text-white;
     opacity: 0;
     transition: all 0.1s;
+    @media only screen and(max-width: $bp-smallest) {
+      font-size: 2rem !important;
+      // font-weight: 400 !important;
+    }
   }
 }

@@ -18,7 +18,8 @@
     transition: background-color 1s, skewX, translateX ease-out 0.5s, color 0.8s,
       transform 0.2s;
     z-index: 1;
-    color: $color-text-dark;
+    margin-top: 0;
+    color: $color-primary-dark;
 
     & span {
       position: relative;
@@ -164,6 +165,9 @@
   font-weight: 400;
   border-bottom: 0.2rem solid $color-accent;
   transition: all 0.2s;
+  @media only screen and(max-width: $bp-phone) {
+    font-size: 3.5rem;
+  }
 
   &:hover {
     transform: skewY(-2deg) scale(1.05);
@@ -173,9 +177,15 @@
   text-transform: uppercase;
   font-size: 3rem;
   font-weight: 400;
+  @media only screen and(max-width: $bp-phone) {
+    font-size: 3rem;
+  }
 }
 .heading--3 {
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 400;
+  @media only screen and(max-width: $bp-phone) {
+    font-size: 2.5rem;
+  }
 }

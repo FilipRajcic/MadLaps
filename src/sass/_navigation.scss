@@ -51,6 +51,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
     height: 5rem;
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+
+    @media only screen and(max-width: $bp-small) {
+      visibility: visible;
+      opacity: 1;
+
+      display: block;
+    }
   }
   &__list {
     z-index: 10;
